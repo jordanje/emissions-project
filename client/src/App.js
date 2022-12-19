@@ -14,7 +14,7 @@ function App() {
   const emissions_london = fetch('https://beta3.api.climatiq.io/estimate', {
     method: 'POST',
     headers: {
-      'Authorization' : 'Bearer PVS0EDV1J7MAWKMW1GDFQGJCWTCE'
+      'Authorization' : `Bearer ${process.env.REACT_APP_API_KEY}`
     },
     body: JSON.stringify({
       "emission_factor": {
