@@ -9,10 +9,34 @@ function App() {
       .then((data) => setCount(data.count));
   }, []);
 
+
+  //example api call
+  const emissions_london = fetch('https://beta3.api.climatiq.io/estimate', {
+    method: 'POST',
+    headers: {
+      'Authorization' : 'Bearer PVS0EDV1J7MAWKMW1GDFQGJCWTCE'
+    },
+    body: JSON.stringify({
+      "emission_factor": {
+        "activity_id": "passenger_vehicle-vehicle_type_bicycle-fuel_source_na-distance_na-engine_size_na"
+    },
+    "parameters":
+        {
+          "distance": 100,
+          "distance_unit": "mi"
+        }
+      })
+  }).then(data => data.json())
+  .then(data => console.log(data))
+ 
   return (
     <div className="App">
       <h1>Page Count: {count}</h1>
+      <div>
+    
+      </div>
     </div>
+ 
   );
 }
 
