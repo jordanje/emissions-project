@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Greeting from "./components/Greeting";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -31,10 +32,7 @@ function App() {
  
   return (
     <div className="App">
-      <h1>hello</h1>
-      <div>
-    
-      </div>
+      <Greeting />
     </div>
  
   );
