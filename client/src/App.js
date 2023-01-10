@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import Greeting from "./components/Greeting";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -29,10 +31,15 @@ function App() {
   //     })
   // }).then(data => data.json())
   // .then(data => console.log(data))
+  const onHandleLogin = (loginData) => {
+    console.log(loginData)
+  }
  
   return (
     <div className="App">
       <Greeting />
+      <Login submit={onHandleLogin}/>
+      <Signup />
     </div>
  
   );
